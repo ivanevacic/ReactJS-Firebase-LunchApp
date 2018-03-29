@@ -5,6 +5,8 @@ import './CurrentUser.css';
 const CurrentUser = ({ user }) => {
   return (
     <div className="CurrentUser">
+    {/* shows currently logged in user name */}
+      { user.displayName }
     </div>
   );
 };
