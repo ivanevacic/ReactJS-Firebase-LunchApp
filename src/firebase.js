@@ -1,13 +1,12 @@
 import firebase from 'firebase'
 
 const config = {
-  apiKey: 'AIzaSyCgun5wHaXz-ozMa7oy4V64PKt-9YHrIK4',
-  authDomain: 'firstflightwithfriends.firebaseapp.com',
-  databaseURL: 'https://firstflightwithfriends.firebaseio.com',
-  projectId: 'firstflightwithfriends',
-  //Store larger files(images,movies,etc....)
-  storageBucket: 'firstflightwithfriends.appspot.com',
-  messagingSenderId: '974294218695'
+  apiKey: "AIzaSyBgpntF_3ZFYBbLKjgXZAgVtDOeGcmMf4k",
+  authDomain: "reactfirebaselunchapp.firebaseapp.com",
+  databaseURL: "https://reactfirebaselunchapp.firebaseio.com",
+  projectId: "reactfirebaselunchapp",
+  storageBucket: "",
+  messagingSenderId: "762873724586"
 }
 
 firebase.initializeApp(config)
