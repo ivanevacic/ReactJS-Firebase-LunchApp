@@ -5,6 +5,8 @@ import SignIn from './SignIn';
 import NewRestaurant from './NewRestaurant';
 import Restaurants from './Restaurants';
 import './Application.css';
+//import map function to iterate trough firebase response which is objects
+import map from 'lodash/map'
 
 class Application extends Component {
   constructor(props) {
@@ -12,6 +14,8 @@ class Application extends Component {
     this.state = {
       currentUser: null
     }
+    //reference 'restaurants' tree in firebase
+    this.restaurantRef = database.ref('/restaurants')
   }
 
   //when dom loads
@@ -26,11 +30,14 @@ class Application extends Component {
                 //logged in or logged out user
                   currentUser
             })
+            this.restaurantRef.on('value', (snapshot) => {
+              this.setState({ restaurants: snapshot.val() })
+            })
           })
   }
 
   render() {
-    const { currentUser } = this.state;
+    const { currentUser, restaurants } = this.state;
     
     return (
       <div className="Application">
@@ -45,6 +52,7 @@ class Application extends Component {
               {currentUser && 
                 <div>
                   <NewRestaurant />
+                  { map(restaurants, (restaurant, key) =>  <p key={key}>{ restaurant.name } </p>)}
                   <CurrentUser user={currentUser} />
                 </div>
               }
