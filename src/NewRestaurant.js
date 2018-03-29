@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react'
+import { database } from './firebase'//import db connection
 import './NewRestaurant.css';
 
 class NewRestaurant extends Component {
@@ -7,12 +8,13 @@ class NewRestaurant extends Component {
     this.state = {
       name: ''
     };
-
+    this.restaurantsRef = database.ref('/restaurants')//references 'restaurants' tree in db
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(event) {
     event.preventDefault();
+    this.restaurantsRef.push({ name: this.state.name })
   }
 
   render() {

@@ -39,10 +39,15 @@ class Application extends Component {
         </header>
         <div>
           {/* Add 'SignIn' component to app*/}
-          {/* Show sign in button if user is not logged in */}
-            {!currentUser && <SignIn />}
-          {/* If user is logged in show his info */}
-            {currentUser && <CurrentUser user={currentUser} />}
+            {/* Show sign in button if user is not logged in */}
+              {!currentUser && <SignIn />}
+            {/* If user is logged in show his info */}
+              {currentUser && 
+                <div>
+                  <NewRestaurant />
+                  <CurrentUser user={currentUser} />
+                </div>
+              }
         </div>
       </div>
     );
