@@ -17,6 +17,10 @@ class Application extends Component {
         <header className="Application--header">
           <h1>Lunch Rush</h1>
         </header>
+        <div>
+          {/* Add 'SignIn' component to app*/}
+          <SignIn />
+        </div>
       </div>
     );
   }

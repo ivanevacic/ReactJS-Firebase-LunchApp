@@ -5,6 +5,10 @@ class SignIn extends Component {
   render() {
     return (
       <div className="SignIn">
+      {/* on click login with google auth provider */}
+        <button onClick={ () => auth.signInWithPopup(googleAuthProvider) }>
+          Sign in
+        </button>
       </div>
     );
   }
